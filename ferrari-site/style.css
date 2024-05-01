@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::selection{
+    background-color: #FF2800;
+    color: #000;
+}
+
+/* Inicio do estilo do header */
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url('./images/bg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    padding: 10px 20px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    /* position: fixed; */
+    /* top: 0; */
+}
+
+.logo{
+    width: 50px;
+    height: 60px;
+}
+
+.nav-login{
+    position: absolute;
+    right: 0;
+}
+
+.nav-menu, .nav-login, .menu-item{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+
+.menu-item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+.menu-item a:hover{
+    color: #FF2800;
+    transition: 0.5s;
+}
+
+.header-text{
+    margin-top: 25%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-text h1{
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header-text h1 span{
+    color: #FF2800;
+}
+
+.header-text p{
+    width: 60%;
+    font-size: 25px;
+    font-weight: 200;
+}
+/* fim do estilo do header */
+
+/* Inicio do estilo do about formula 1 */
+#about-f1{
+    /* height: 100vh; */
+    padding: 50px 0;
+    background-color: #202020;
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.f1-about-col-1{
+    flex-basis: 35%;
+}
+
+.f1-about-col-1 img{
+    width: 100%;
+}
+
+.f1-about-col-2{
+    flex-basis: 50%;
+    font-size: 20px;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+/* fim do estilo do about formula 1 */
+
+/* inicio do estilo do about scuderia ferrari */
+#about-scuderia{
+    padding: 50px 0;
+    background-color: #181818;
+}
+
+.ferrari-about-col-1{
+    flex-basis: 50%;
+    font-size: 20px;
+}
+
+.ferrari-about-col-2{
+    flex-basis: 35%;
+}
+
+.ferrari-about-col-2 img{
+    width: 80%;
+}
+/* fim do estilo do about scuderia ferrari */
+
+/* inicio do estilo dos pilotos */
+#pilots{
+    padding: 50px 0;
+    background-color: #202020;;
+}
+
+.pilots-list{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.pilot{
+    position: relative;
+    overflow: hidden;
+}
+
+.pilot img{
+    transition: 0.5s;
+    padding: 10px 40px;
+}
+
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), #FF2800);
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 15px;
+    transition: height .8s;
+}
+
+.layer h3{
+    font-weight: 600;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.layer a{
+    margin-top: 10%;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.layer a:hover{
+    background-color: #fff;
+    color: #000;
+    transform:translateY(-10px);
+    transition: 0.8s;
+}
+
+.pilot:hover img{
+    transform: scale(1.1);
+}
+
+.pilot:hover .layer{
+    height: 100%;
+}
+
+/* fim do estilo dos pilotos */
+
