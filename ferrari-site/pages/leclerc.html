@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/pilots.css">
+    <link rel="shortcut icon" href="../images/cavallino.png" type="image/x-icon">
+    <title>Piloto - Charles Leclerc</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <nav class="nav"><!-------Inicio da navbar------->
+            <a href="../index.html"><img src="../images/cavallino.png" class="logo"></a>
+            <ul class="nav-login">
+                <li class="menu-item"><a href="#">Login</a></li>
+                <li class="menu-item"><a href="#">Cadastro</a></li>
+            </ul>
+        </nav><!-------Fim da navbar------->
+    </header>
+    <section id="pilot-status">
+        <div class="container">
+            <div class="pilot">
+                <div class="pilot-col-1">
+                    <img src="../images/stats-leclerc.png">
+                </div>
+                <div class="pilot-col-2">
+                    <div class="infos">
+                        <h1 class="pilot-name">Charles Leclerc</h1>
+                        <div class="pilot-infos">
+                            <span class="span-info">1.80 M</span>
+                            <span class="span-info">Mônaco</span>
+                            <span class="span-info">68 KG</span>
+                        </div>
+                        <div class="infos-description">
+                            <span>Altura</span>
+                            <span>Pais Origem</span>
+                            <span>Peso</span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <h2 class="carrer">Carreira</h2>
+                        <span class="span-info">5 Corridas Vencidas</span>
+                        <span class="span-info">23 Pole positions</span>
+                        <span class="span-info">130 Corridas Disputadas</span>
+                        <span class="span-info">32 Vezes no Pódio</span>
+                        <span class="span-info">6791 Voltas</span>
+                        <span class="span-info">9 Voltas Rápidas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <div class="charts">
+        <canvas id="chartPoints"></canvas>
+        <canvas id="chartStatus"></canvas>
+    </div> -->
+</body>
+
+</html>
+
+<script>
+    const chartPoints = document.getElementById('chartPoints');
+    const chartStatus = document.getElementById('chartStatus');
+
+    new Chart(chartPoints, {
+        type: 'bar',
+        data: {
+            labels: ['2024', '2023', '2022', '2021', '2020', '2019'],
+            datasets: [{
+                label: 'Pontos',
+                data: [76, 206, 308, 159, 98, 264],
+                backgroundColor: '#FF1800',
+                barThickness: 30,
+                borderWidth: 2
+            },
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#CCC'
+                    },
+                    grid: {
+                        color: '#CCC'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#CCC'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#CCC'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Pontos por Temporada na Ferrari',
+                    color: '#FFF',
+                }
+            },
+        },
+    });
+
+    new Chart(chartStatus, {
+        type: 'bar',
+        data: {
+            labels: ['2024', '2023', '2022', '2021', '2020', '2019'],
+            datasets: [{
+                label: 'Vitórias',
+                data: [0, 0, 3, 0, 0, 2],
+                backgroundColor: '#FF1800',
+                barThickness: 30,
+                borderWidth: 2
+            },
+            {
+                label: 'Pódios',
+                data: [2, 6, 11, 1, 2, 10],
+                backgroundColor: '#838383',
+                barThickness: 30,
+                borderWidth: 2
+            },
+            ]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#CCC'
+                    },
+                    grid: {
+                        color: '#CCC'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#CCC'
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#CCC'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Vitórias e Pódios por temporada na Ferrari',
+                    color: '#FFF',
+                }
+            },
+        }
+    });
+</script>

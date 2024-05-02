@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #202020;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Inicio do estilo do header */
+#header{
+    padding: 10px 20px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 50px;
+    height: 60px;
+}
+
+.nav-login{
+    position: absolute;
+    right: 0;
+}
+
+.nav-login, .menu-item{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+
+.menu-item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+.menu-item a:hover{
+    color: #FF2800;
+    transition: 0.5s;
+}
+/* Fim do estilo do header */
+
+/* Inicio do estilo do piloto */
+.container{
+    padding: 10px 20px;
+}
+
+.pilot{
+    display: flex;
+}
+
+.pilot-col-1 img{
+    height: 100%;
+}
+
+.infos{
+    display: flex;
+    flex-direction: column;
+    width: 445px;
+}
+
+.pilot-name{
+    font-size: 50px;
+    color: #FFF;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.span-info{
+    color: #FF2800;
+    font-weight: lighter;
+    font-size: 15px;
+}
+
+.pilot-infos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.infos-description{
+    color: #CCC;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.stats{
+    margin-top: 5%;
+    /* display: flex;  */
+    /* flex-direction: column; */
+}
+
+.carrer{
+    font-size: 30px;
+    font-weight: 500;
+    color: #FFF;
+    text-transform: uppercase;
+}
+/* Fim do estilo do piloto */
+
