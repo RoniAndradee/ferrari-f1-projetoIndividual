@@ -32,13 +32,20 @@ body{
 }
 
 .logo{
+    position: fixed;
     width: 50px;
-    height: 60px;
+    height: 65px;
+}
+
+.logo:hover{
+    transform: translateY(2px) translateX(5px);
+    transition: 0.3s;
 }
 
 .nav-login{
     position: absolute;
     right: 0;
+    top: 1%;
 }
 
 .nav-login, .menu-item{
@@ -71,9 +78,15 @@ body{
     padding: 0 20px;
 }
 
+.pilot-col-1{
+    position: fixed;
+    top: 15%;
+}
+
 .pilot-col-2{
-    margin-left: 15px;
-    width: 100%;
+    margin-top: 5%;
+    width: 65%;
+    margin-left: 30%;
 }
 
 .infos{
@@ -144,3 +157,34 @@ body{
     
 }
 /* Fim do estilo do piloto */
+
+/* inicio do estilo do footer */
+#footer{
+    height: 80px;
+    color: #FFF;
+    background-color: #323232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text{
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.github-logo{
+    margin-left: 20px;
+}
+
+.github-logo img{
+    width: 45px;
+    height: 45px;
+}
+
+.github-logo img:hover{
+    transition: 0.5s;
+    width: 50px;
+    height: 50px;
+}
+/* fim do estilo do footer */
