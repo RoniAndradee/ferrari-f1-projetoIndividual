@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #202020;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::selection{
+    background-color: #FF2800;
+    color: #000;
+}
+
+/* Inicio do estilo do header */
+#header{
+    padding: 10px 20px;
+    height: 85px;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo{
+    position: fixed;
+    width: 50px;
+    height: 65px;
+}
+
+.logo:hover{
+    transform: translateY(2px) translateX(5px);
+    transition: 0.3s;
+}
+
+.nav-login{
+    position: absolute;
+    right: 0;
+    top: 1%;
+}
+
+.nav-login, .menu-item{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+
+.menu-item a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-item a:hover{
+    color: #FF2800;
+    transition: 0.5s;
+}
+/* Fim do estilo do header */
+
+/* Inicio do estilo do piloto */
+#registration{
+    height: 80vh;
+}
+
+.register{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+}
+
+.register-col-1 img{
+    
+    /* background-image: url('../assets/images/bg-cadastro.jpg'); */
+
+}
+
+/* fim do estilo da tela de cadastro */
+
+/* inicio do estilo do footer */
+#footer{
+    height: 80px;
+    background-color: #323232;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text{
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.github-logo{
+    margin-left: 20px;
+}
+
+.github-logo img{
+    width: 45px;
+    height: 45px;
+}
+
+.github-logo img:hover{
+    transition: 0.5s;
+    width: 50px;
+    height: 50px;
+}
+/* fim do estilo do footer */
