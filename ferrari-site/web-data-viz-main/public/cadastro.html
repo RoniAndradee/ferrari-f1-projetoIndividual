@@ -35,7 +35,7 @@
                 <div class="formulario">
                     <!-- <label id='userLabel' for='nome_input'>Equipe Favorita</label> -->
                         <select name="empresas" id="listaEmpresas" required>
-                            <option selected>Selecione sua equipe favorita</option>
+                            <option selected>Selecione seu piloto favorito</option>
                         </select>
                     <div class='label-float'>
                         <input id="nome_input" type="text" placeholder='' required>
@@ -86,20 +86,14 @@
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
         var empresaVar = listaEmpresas.value
-        if (
-            nomeVar == "" ||
-            emailVar == "" ||
-            senhaVar == "" ||
-            confirmacaoSenhaVar == "" ||
-            empresaVar == ""
-        ) {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || empresaVar == "") {
             cardErro.style.display = "block";
-            mensagem_erro.innerHTML =
-                "(Mensagem de erro para todos os campos em branco)";
-
+            mensagem_erro.innerHTML = "Preencha todos os campos!";
             finalizarAguardar();
             return false;
-        } else {
+        } else if(emailVar.indexOf('@') == -1 ){
+
+        }else {
             setInterval(sumirMensagem, 5000);
         }
 
