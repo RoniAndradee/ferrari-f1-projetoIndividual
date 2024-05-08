@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --tamanho-header: 80px;
+    --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+    --tamanho-footer: 65px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #202020;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::selection {
+    background-color: #FF2800;
+    color: #000;
+}
+
+/* Inicio do estilo do header */
+#header {
+    padding: 10px 20px;
+    height: var(--tamanho-header);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 50px;
+    height: 65px;
+}
+
+.logo:hover {
+    transform: translateY(2px) translateX(5px);
+    transition: 0.3s;
+}
+
+.nav-login {
+    position: absolute;
+    right: 0;
+    top: 1%;
+}
+
+.nav-login,
+.menu-item {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+
+.menu-item a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu-item a:hover {
+    color: #FF2800;
+    transition: 0.5s;
+}
+/* Fim do estilo do header */
+
+/* Inicio do estilo do formulario de cadastro */
+.container {
+    display: flex;
+    width: 70%;
+    margin: auto;
+}
+
+.login {
+    height: var(--tamanho-login);
+    background-image: url('../assets/images/bg-cadastro.jpg');
+    background-size: cover;
+    background-position: bottom;
+}
+
+.login .container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.card {
+    width: 50%;
+    background-color: rgba(32, 32, 32, 0.7);
+    backdrop-filter: blur(7.7px);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    flex-direction: column;
+    padding: 15px 0;
+}
+
+.card h1 {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.formulario {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario span {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.formulario span a {
+    text-decoration: none;
+    color: #ffd5d5;
+}
+
+.formulario span a:hover {
+    color: #FF1800;
+    transition: .5s;
+}
+
+.label-float input, .formulario select {
+    width: 100%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 2px solid #959595;
+    color: #FFF;
+    background-color: transparent;
+    outline: none;
+    font-size: 15px;
+    transition: all .3s ease-out;
+    border-radius: 0;
+}
+
+.formulario option{
+    color: #000;
+}
+
+.label-float, #listaEmpresas {
+    position: relative;
+    padding-top: 15px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.label-float input:focus {
+    border-bottom: 2px solid #BE4747;
+}
+
+.label-float label {
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .3s ease-out;
+}
+
+.label-float input:focus+label,
+.label-float input:valid+label {
+    font-size: 13px;
+    margin-top: 0;
+    color: #ccc
+}
+
+.botao {
+    cursor: pointer;
+    border: 0;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #BE4747;
+    padding: 5px 20px;
+    align-self: center;
+    margin: 15px 0;
+}
+
+.botao:hover {
+    background-color: transparent;
+    border: 1px solid #BE4747;
+    transition: 0.5s;
+}
+
+.loading-div {
+    width: 50px;
+    display: none;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+/* Fim do estilo do formulario de cadastro */
+
+/* Inicio do estilo dos alertas de erro */
+#div_erros_login {
+    display: none
+}
+
+.alerta_erro {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card_erro {
+    display: none;
+    background-color: #fff;
+    color: black;
+    width: 230px;
+    position: fixed;
+    border-radius: 4px;
+    border: #BE4747 3px solid;
+    padding: 10px;
+    margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.loading-div {
+    width: 50px;
+    margin: auto;
+    display: none;
+}
+
+.loading-div img {
+    height: 50px;
+    width: 50px;
+}
+
+#alerta {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.mensagem-alarme {
+    background-color: white;
+    border-radius: 5px;
+    width: 300px;
+    height: 80px;
+    margin: 10px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.mensagem-alarme h3 {
+    font-size: 14px;
+    margin: 0;
+}
+
+.mensagem-alarme .informacao {
+    width: 66%;
+}
+
+.alarme-sino {
+    width: 48px;
+    height: 48px;
+    animation-name: bell;
+    animation-duration: 4s;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
+    background-size: cover;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bell {
+    0% {
+        transform: rotate(25deg)
+    }
+
+    25% {
+        transform: rotate(-25deg)
+    }
+
+    50% {
+        transform: rotate(25deg)
+    }
+
+    75% {
+        transform: rotate(-25deg)
+    }
+
+    100% {
+        transform: rotate(25deg)
+    }
+}
+/* Fim dos alertas de erro */
+
+
+/* inicio do estilo do footer */
+#footer {
+    height: var(--tamanho-footer);
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.github-logo {
+    margin-left: 20px;
+}
+
+.github-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.github-logo img:hover {
+    transition: 0.5s;
+    width: 45px;
+    height: 45px;
+}
+/* fim do estilo do footer */
