@@ -34,24 +34,28 @@
                 <h1>Cadastro</h1>
                 <div class="formulario">
                     <!-- <label id='userLabel' for='nome_input'>Equipe Favorita</label> -->
-                        <select name="empresas" id="listaEmpresas" required>
+                        <select name="pilotos" id="listaPilotos" required>
                             <option selected>Selecione seu piloto favorito</option>
                         </select>
                     <div class='label-float'>
                         <input id="nome_input" type="text" placeholder='' required>
                         <label id='userLabel' for='nome_input'>Nome</label>
+                        <span id="erroNome" style="color: #FF1800;"></span>
                     </div>
                     <div class='label-float'>
                         <input id="email_input" type="text" placeholder='' required>
                         <label id='emailLabel' for='email_input'>Email</label>
+                        <span id="erroEmail" style="color: #FF1800;"></span>
                     </div>
                         <div class='label-float'>
                             <input id="senha_input" type="password" placeholder='' required>
                             <label id='senhaLabel' for='senha_input'>Senha</label>
+                            <span id="erroSenha" style="color: #FF1800;"></span>
                         </div>
                         <div class='label-float'>
                             <input id="confirmacao_senha_input" type="password" placeholder='' required>
                             <label id='confirmSenhaLabel' for='confirmacao_senha_input'>Confirmar Senha</label>
+                            <span id="erroConfirmSenha" style="color: #FF1800;"></span>
                         </div>
                     <button class="botao" onclick="cadastrar()">Cadastrar</button>
                     <span>Já tem uma conta? <a href="./login.html">Logar</a></span>
@@ -85,16 +89,39 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var empresaVar = listaEmpresas.value
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || empresaVar == "") {
+        var pilotoVar = listaPilotos.value;
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || pilotoVar == "Selecione seu piloto favorito") {
             cardErro.style.display = "block";
             mensagem_erro.innerHTML = "Preencha todos os campos!";
             finalizarAguardar();
             return false;
-        } else if(emailVar.indexOf('@') == -1 ){
-
-        }else {
+        } else {
             setInterval(sumirMensagem, 5000);
+        }
+
+        if (emailVar.indexOf('@') == -1 ){
+            erroEmail.innerHTML = `Email inválido`;
+            finalizarAguardar();
+            return false;
+        } else {
+            erroEmail.innerHTML = ``;
+        }
+
+        if (senhaVar.length < 6){
+            erroSenha.innerHTML = `A senha precisa conter no minímo 6 caracteres`;
+            finalizarAguardar();
+            return false;
+        }else {
+            erroSenha.innerHTML = ``;
+        }
+
+        if (confirmacaoSenhaVar != senhaVar){
+            erroConfirmSenha.innerHTML = `As senhas não coincidem`;
+            finalizarAguardar();
+            return false;
+        }else {
+            erroConfirmSenha.innerHTML = ``;
         }
 
         // Enviando o valor da nova input
@@ -109,7 +136,7 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                empresaServer: empresaVar
+                pilotoServer: pilotoVar
             }),
         })
             .then(function (resposta) {
@@ -140,13 +167,13 @@
     }
 
     function listar() {
-        fetch("/empresas/listar", {
+        fetch("/pilotos/listar", {
             method: "GET",
         })
             .then(function (resposta) {
-                resposta.json().then((empresas) => {
-                    empresas.forEach((empresa) => {
-                        listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+                resposta.json().then((pilotos) => {
+                    pilotos.forEach((piloto) => {
+                        listaPilotos.innerHTML += `<option value='${piloto.idPiloto}'>${piloto.nome}</option>`;
                     });
                 });
             })
