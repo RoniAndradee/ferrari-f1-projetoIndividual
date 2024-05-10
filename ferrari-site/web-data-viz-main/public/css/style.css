@@ -29,19 +29,17 @@ body{
     background-position: center;
 }
 
-.container{
-    padding: 10px 20px;
-}
-
 .nav{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    background-color: #20202085;
 }
 
 .logo{
-    width: 50px;
-    height: 60px;
+    margin-left: 15px;
+    width: 40px;
+    height: 50px;
 }
 
 .nav-login{
@@ -147,10 +145,38 @@ body{
 }
 /* fim do estilo do about scuderia ferrari */
 
+/* inicio do estilo da f1 na minha vida */
+#f1-my-life{
+    padding: 50px 0;
+    background-color: #202020;
+}
+
+.f1-my-life-col-1{
+    flex-basis: 35%;
+}
+
+.f1-my-life-col-1 img{
+    width: 100%;
+}
+
+.f1-my-life-col-2{
+    flex-basis: 50%;
+    font-size: 20px;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* fim do estilo da f1 na minha vida */
+
 /* inicio do estilo dos pilotos */
 #pilots{
     padding: 50px 0;
-    background-color: #202020;;
+    background-color: #181818;
 }
 
 .pilots-list{
