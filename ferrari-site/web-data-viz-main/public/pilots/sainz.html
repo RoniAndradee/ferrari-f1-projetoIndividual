@@ -28,7 +28,7 @@
                 </div>
                 <div class="pilot-col-2">
                     <div class="infos">
-                        <h1 class="pilot-name">Carlos Sainz</h1>
+                        <h1 class="pilot-name"><span id="pilot_name">Carlos Sainz</span></h1>
                         <div class="pilot-infos">
                             <span class="span-info">1.77 M</span>
                             <span class="span-info">Espanha</span>
@@ -76,6 +76,8 @@
 <script>
     const chartPoints = document.getElementById('chartPoints');
     const chartStatus = document.getElementById('chartStatus');
+
+    // pilot_name.innerHTML = sessionStorage.NOME_USUARIO
 
     new Chart(chartPoints, {
         type: 'bar',
@@ -136,7 +138,7 @@
             {
                 label: 'Pódios',
                 data: [3, 3, 9, 4],
-                backgroundColor: '#838383',
+                backgroundColor: '#902512',
                 barThickness: 30,
                 borderWidth: 2
             },
