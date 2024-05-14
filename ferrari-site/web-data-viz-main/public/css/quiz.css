@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.quiz {
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    background-color: #202020;
+
+}
+
+.quiz h1 {
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.main {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+}
+
+.spanQtd{
+    text-align: end;
+}
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.finish{
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button{
+    width: 100%;
+    text-align: start;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #FF1200;
+    color: #FFF;
+}
+
+.finish button{
+    text-align: center;
+}
+

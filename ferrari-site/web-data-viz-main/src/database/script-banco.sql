@@ -65,3 +65,4 @@ insert into piloto values
 (default, 10, 'Guanyu Zhou', '1999-05-30', NULL),
 (default, 10, 'Valtteri Bottas', '1989-08-28', NULL);
 
+select * from usuario;
