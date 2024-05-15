@@ -79,4 +79,44 @@ export default [
             { option: "2007", correct: true },
         ],
     },
+    {
+        question: "Quem foi o fundador da Scuderia Ferrari, a equipe de corrida da Ferrari?",
+        answers: [
+            { option: "Enzo Ferrari", correct: true },
+            { option: "Luigi Chinetti", correct: false },
+            { option: "Gilles Villeneuve", correct: false },
+        ],
+    },
+    {
+        question: "Qual foi o primeiro Grande Prêmio vencido pela Ferrari na Fórmula 1?",
+        answers: [
+            { option: "Grande Prêmio da Itália", correct: true },
+            { option: "Grande Prêmio de Mônaco", correct: false },
+            { option: "Grande Prêmio da Inglaterra", correct: false },
+        ],
+    },
+    {
+        question: "Quantas vezes a Ferrari conquistou o título de construtores na década de 2000?",
+        answers: [
+            { option: "6", correct: true },
+            { option: "5", correct: false },
+            { option: "7", correct: false },
+        ],
+    },
+    {
+        question: "Qual piloto conquistou o último título mundial de pilotos pela Ferrari antes da era de Michael Schumacher?",
+        answers: [
+            { option: "Niki Lauda", correct: true },
+            { option: "Alain Prost", correct: false },
+            { option: "Jody Scheckter", correct: false },
+        ],
+    },
+    {
+        question: "Quem foi o piloto da Ferrari que venceu o Grande Prêmio de Mônaco por cinco vezes consecutivas?",
+        answers: [
+            { option: "Michael Schumacher", correct: true },
+            { option: "Sebastian Vettel", correct: false },
+            { option: "Kimi Räikkönen", correct: false },
+        ],
+    },
 ];
