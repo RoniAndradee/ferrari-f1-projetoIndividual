@@ -25,7 +25,7 @@ function nextQuestion(e) {
         questionsCorrect++;
     }
 
-    if (currentIndex < questions.length - 1) {
+    if (currentIndex < questions.length) {
         currentIndex++;
         loadQuestion();
     } else {
@@ -40,7 +40,7 @@ function finish() {
 }
 
 function loadQuestion() {
-    spanQtd.innerHTML = `${currentIndex + 1}/${questions.length}`;
+    spanQtd.innerHTML = `${currentIndex} de ${questions.length}`;
     const item = questions[currentIndex];
     answers.innerHTML = "";
     question.innerHTML = item.question;
