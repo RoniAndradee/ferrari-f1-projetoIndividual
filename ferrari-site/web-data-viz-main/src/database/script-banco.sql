@@ -31,6 +31,17 @@ foreign key (fkPilotoFavorito)
 	references piloto(idPiloto)
 );
 
+create table tentativaQuiz (
+idQuiz int primary key auto_increment,
+qtdAcertos int,
+dtTentativa datetime default current_timestamp,
+fkUsuario int,
+foreign key (fkUsuario)
+	references usuario (idUsuario)
+);
+
+select * from tentativaQuiz;
+
 insert into equipe values
 (default, 'Mercedes-AMG Petronas F1 Team', '1954-07-04', 8),
 (default, 'Oracle Red Bull Racing', '2005-03-26', 6),

@@ -21,9 +21,9 @@
         rel="stylesheet">
 </head>
 
-<body onload="validarSessao()">
+<!-- <body onload="validarSessao()"> -->
 
-<!-- <body> -->
+<body>
 
     <div class="janela">
         <div class="header-left dash-header">
@@ -55,22 +55,28 @@
         </div>
 
         <div class="quiz">
-            <h1>Quiz Fórmula 1</h1>
+            <!-- <h1>Quiz Fórmula 1</h1> -->
 
             <main class="main">
                 <div class="content" id="content">
                     <span class="title">Teste seus conhecimentos sobre a Scuderia Ferrari</span>
+                    <div class="iniciar">
+                        <button class="btnIniciar" id="btnIniciar">Iniciar</button>
+                    </div>
                     <span class="spanQtd" id="spanQtd"></span>
                     <span class="question" id="question"></span>
                     <span class="answers" id="answers"></span>
                 </div>
                 <div class="finish" id="finish">
                     <span id="textFinish"></span>
-                    <button id="btnRestart" onclick="restart()"> Reiniciar</button>
+                    <span id="congratsFinish"></span>
+                    <div>
+                        <button id="btnRestart" class="btnRestart" onclick="restart()"> Reiniciar</button>
+                    </div>
                 </div>
             </main>
         </div>
     </div>
-    <script src="../js/quiz.js" type="module"></script>
+    <script src="../js/quiz.js"></script>
 </body>
 </html>

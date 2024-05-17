@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./images/cavallino.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/cavallino.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./js/sessao.js"></script>
     <title>Ferrari - F1</title>
 </head>
@@ -28,7 +30,7 @@
                     <li class="menu-item"><a href="./cadastro.html">Cadastro</a></li>
                 </ul>
             </nav><!-------Fim da navbar------->
-            <div class="header-text">
+            <div class="header-text" data-aos="fade-up" data-aos-duration="2000">
                 <h1>A <span>scuderia ferrari</span> na fórmula 1</h1>
                 <p>A equipe mais antiga, bem-sucedida e vitoriosa da história da categoria.</p>
             </div>
@@ -39,12 +41,12 @@
 
     <section id="about-f1"> <!-------Inicio do About Fórmula 1------->
         <div class="container">
-            <h1 class="sub-title">Sobre a fórmula 1</h1>
+            <h1 class="sub-title" data-aos="fade-up" data-aos-duration="2000">Sobre a fórmula 1</h1>
             <div class="row">
-                <div class="f1-about-col-1">
-                    <img src="./assets/images/f1-logo.png" alt="">
+                <div class="f1-about-col-1" data-aos="fade-right" data-aos-duration="2000">
+                    <img src="./assets/images/f1-logo.png">
                 </div>
-                <div class="f1-about-col-2">
+                <div class="f1-about-col-2" data-aos="fade-left" data-aos-duration="2000">
                     <p class="about-text">
                         A Fórmula 1, é a categoria mais alta do automobilismo mundial, conhecida por sua tecnologia
                         avançada, velocidades extremas e competição entre os melhores pilotos do mundo. Os carros de
@@ -60,9 +62,9 @@
 
     <section id="about-scuderia"> <!-------Inicio do About Scuderia Ferrari------->
         <div class="container">
-            <h1 class="sub-title">A scuderia ferrari</h1>
+            <h1 class="sub-title" data-aos="fade-up" data-aos-duration="2000">A scuderia ferrari</h1>
             <div class="row">
-                <div class="ferrari-about-col-1">
+                <div class="ferrari-about-col-1" data-aos="fade-right" data-aos-duration="2000">
                     <p class="about-text">
                         Fundada por Enzo Ferrari, A Ferrari é uma das equipes mais lendárias da Fórmula 1. A equipe
                         participou de todas as temporadas da F1. Com inúmeros títulos de pilotos e construtores ao longo
@@ -73,7 +75,7 @@
                         legado de paixão, inovação e excelência técnica nas pistas de corrida.
                     </p>
                 </div>
-                <div class="ferrari-about-col-2">
+                <div class="ferrari-about-col-2" data-aos="fade-left" data-aos-duration="2000">
                     <img src="./assets/images/ferrari-logo.png" alt="">
                 </div>
             </div>
@@ -83,12 +85,12 @@
 
     <section id="f1-my-life"> <!-------Inicio da ferrari na minha vida------->
         <div class="container">
-            <h1 class="sub-title">A Ferrari na minha vida</h1>
+            <h1 class="sub-title" data-aos="fade-up" data-aos-duration="2000">A Ferrari na minha vida</h1>
             <div class="row">
-                <div class="f1-my-life-col-1">
+                <div class="f1-my-life-col-1" data-aos="fade-right" data-aos-duration="2000">
                     <img src="https://down-br.img.susercontent.com/file/br-11134207-7qukw-leyexbw3nffv93" alt="">
                 </div>
-                <div class="f1-my-life-col-2">
+                <div class="f1-my-life-col-2" data-aos="fade-left" data-aos-duration="2000">
                     <p class="about-text">
                         Desde pequeno sou fã de automobilismo e sempre acompanhei a Fórmula 1 com meu pai nas manhãs de domingo, e desde então fui ensinado a gostar da Scuderia Ferrari, na época que comecei a assistir, um dos pilotos da Ferrari era o Brasileiro Felipe Massa, ele era o único piloto Brasileiro no Grid, isso me fez gostar muito da Ferrari, um tempo depois decidi perguntar ao meu pai um pouco da história da Ferrari e descobri que ela era (e ainda é) a maior equipe da história da F1, com maior número de titulos e corridas. E foi ai que descobri que eu estava torcendo para a melhor equipe de todas, e desde então a Ferrari teve seus altos e baixos, mas nunca parei de torcer para a equipe que o meu pai me ensinou a gostar.
                     </p>
@@ -99,9 +101,9 @@
     <!-- -------------------------------------------------------------------------------------------------- -->
     <section id="pilots"> <!-------Inicio dos Pilotos------->
         <div class="container">
-            <h1 class="sub-title">Pilotos</h1>
-            <div class="pilots-list">
-                <div class="pilot">
+            <h1 class="sub-title" data-aos="fade-up" data-aos-duration="2000">Pilotos</h1>
+            <div class="pilots-list" >
+                <div class="pilot" data-aos="zoom-in" data-aos-duration="2000">
                     <img src="./assets/images/leclerc.png">
                     <div class="layer">
                         <h3>Charles Leclerc</h3>
@@ -111,7 +113,7 @@
                         <a href="./pilots/leclerc.html">Saiba Mais</a>
                     </div>
                 </div>
-                <div class="pilot">
+                <div class="pilot" data-aos="zoom-in" data-aos-duration="2000">
                     <img src="./assets/images/sainz.png">
                     <div class="layer">
                         <h3>Carlos Sainz Jr.</h3>
@@ -134,8 +136,9 @@
     </footer> <!-- Fim do footer -->
 
     <!-- -------------------------------------------------------------------------------------------------- -->
-
-    <script src="script.js"></script>
 </body>
-
 </html>
+
+<script>
+    AOS.init();
+</script>

@@ -13,6 +13,7 @@ html{
 body{
     color: #fff;
     font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
 }
 
 ::selection{
