@@ -1,49 +1,49 @@
 import questions from "./questions.js";
 
-const question = document.getElementById('question');
-const answers = document.getElementById('answers');
+const questao = document.getElementById('questao');
+const respostas = document.getElementById('respostas');
 const spanQtd = document.getElementById('spanQtd');
-const textFinish = document.getElementById('textFinish');
+const textoFinal = document.getElementById('textoFinal');
 const content = document.getElementById('content');
 const contentFinish = document.getElementById('finish');
-const btnRestart = document.getElementById('btnRestart');
+const btnReiniciar = document.getElementById('btnReiniciar');
 
-let currentIndex = 0;
-let questionsCorrect = 0;
+let indiceAtual = 0;
+let qtdQuestoesCorretas = 0;
 
-btnRestart.onclick = () => {
+btnReiniciar.onclick = () => {
     content.style.display = "flex";
     contentFinish.style.display = "none";
 
-    currentIndex = 0;
-    questionsCorrect = 0;
-    loadQuestion();
+    indiceAtual = 0;
+    qtdQuestoesCorretas = 0;
+    carregarQuestao();
 };
 
-function nextQuestion(e) {
+function proximaQuestao(e) {
     if (e.target.getAttribute("data-correct") === "true") {
-        questionsCorrect++;
+        qtdQuestoesCorretas++;
     }
 
-    if (currentIndex < questions.length) {
-        currentIndex++;
-        loadQuestion();
+    if (indiceAtual < questions.length - 1) {
+        indiceAtual++;
+        carregarQuestao();
     } else {
-        finish();
+        finalizar();
     }
 }
 
-function finish() {
-    textFinish.innerHTML = `você acertou ${questionsCorrect} de ${questions.length}`;
+function finalizar() {
+    textoFinal.innerHTML = `você acertou ${qtdQuestoesCorretas} de ${questions.length}`;
     content.style.display = "none";
     contentFinish.style.display = "flex";
 }
 
-function loadQuestion() {
-    spanQtd.innerHTML = `${currentIndex} de ${questions.length}`;
-    const item = questions[currentIndex];
-    answers.innerHTML = "";
-    question.innerHTML = item.question;
+function carregarQuestao() {
+    spanQtd.innerHTML = `${indiceAtual + 1} de ${questions.length}`;
+    const item = questions[indiceAtual];
+    respostas.innerHTML = "";
+    questao.innerHTML = item.question;
 
     for (let i = 0; i < item.answers.length; i++) {
         const answer = item.answers[i];
@@ -53,14 +53,14 @@ function loadQuestion() {
     ${answer.option}
     </button>
     `;
-        answers.appendChild(div);
+        respostas.appendChild(div);
     }
 
     const answerButtons = document.querySelectorAll(".answer");
     for (let i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].addEventListener("click", nextQuestion);
+        answerButtons[i].addEventListener("click", proximaQuestao);
     }
 }
 
-loadQuestion();
+carregarQuestao();
 
