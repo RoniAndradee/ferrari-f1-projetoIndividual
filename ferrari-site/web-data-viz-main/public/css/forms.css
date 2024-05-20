@@ -150,7 +150,8 @@ body {
 }
 
 .formulario option{
-    color: #000;
+    color: #FFF;
+    background-color: rgb(32, 32, 32)
 }
 
 .label-float, #listaPilotos {

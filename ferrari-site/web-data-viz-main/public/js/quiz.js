@@ -1,4 +1,3 @@
-// import questions from "./questions.js";
 const questions = [
     {
         question: "Qual piloto venceu mais campeonatos de Fórmula 1 pela Ferrari?",
@@ -122,6 +121,7 @@ const questions = [
     // },
 ];
 
+const main = document.getElementById('main');
 const questao = document.getElementById('questao');
 const respostas = document.getElementById('respostas');
 const spanQtd = document.getElementById('spanQtd');
@@ -135,6 +135,7 @@ const btnIniciar = document.getElementById('btnIniciar');
 let indiceAtual = 0;
 let questionsCorrect = 0;
 let idUsuario = sessionStorage.ID_USUARIO;
+let idQuiz = 1;
 
 btnReiniciar.onclick = () => {
     content.style.display = "flex";
@@ -146,8 +147,9 @@ btnReiniciar.onclick = () => {
 };
 
 btnIniciar.onclick = () => {
-    questao.style.margin = "20px 0"
-    loadQuestion();
+    main.style.display = "flex";
+    questao.style.margin = "20px 0";
+    carregarQuestao();
 }
 
 function proximaQuestao(e) {
@@ -157,7 +159,7 @@ function proximaQuestao(e) {
 
     if (indiceAtual < questions.length - 1) {
         indiceAtual++;
-        loadQuestion();
+        carregarQuestao();
     } else {
         finalizar();
     }
@@ -185,13 +187,13 @@ function finalizar() {
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
             corretasServer: questionsCorrect,
-            idServer: idUsuario
+            idServer: idUsuario,
         }),
     })
 
 }
 
-function loadQuestion() {
+function carregarQuestao() {
     btnIniciar.style.display = "none";
     spanQtd.innerHTML = `${indiceAtual + 1} de ${questions.length}`;
     const item = questions[indiceAtual];
@@ -202,14 +204,14 @@ function loadQuestion() {
         const answer = item.answers[i];
         const div = document.createElement("div");
         div.innerHTML = `
-    <button class="answer" id="answer" data-correct="${answer.correct}">
+    <button class="opcao" id="opcao" data-correct="${answer.correct}">
     ${answer.option}
     </button>
     `;
         respostas.appendChild(div);
     }
 
-    const answerButtons = document.querySelectorAll(".answer");
+    const answerButtons = document.querySelectorAll(".opcao");
     for (let i = 0; i < answerButtons.length; i++) {
         answerButtons[i].addEventListener("click", proximaQuestao);
     }

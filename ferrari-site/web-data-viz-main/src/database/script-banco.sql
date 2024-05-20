@@ -31,13 +31,23 @@ foreign key (fkPilotoFavorito)
 	references piloto(idPiloto)
 );
 
-create table tentativaQuiz (
+create table quiz (
 idQuiz int primary key auto_increment,
+nome varchar(45),
+qtdPerguntas int
+);
+
+create table tentativaQuiz (
+idTentativa int auto_increment,
+fkQuiz int,
+fkUsuario int,
 qtdAcertos int,
 dtTentativa datetime default current_timestamp,
-fkUsuario int,
+primary key (idTentativa, fkQuiz, fkUsuario),
 foreign key (fkUsuario)
-	references usuario (idUsuario)
+	references usuario (idUsuario),
+foreign key (fkQuiz)
+	references quiz (idQuiz)
 );
 
 CREATE TABLE aviso (
@@ -48,8 +58,10 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
 
-
 select * from tentativaQuiz;
+
+insert into tentativaQuiz (fkUsuario, qtdAcertos) values
+(2, 10);
 
 insert into equipe values
 (default, 'Mercedes-AMG Petronas F1 Team', '1954-07-04', 8),
