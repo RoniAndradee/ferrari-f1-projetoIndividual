@@ -180,6 +180,8 @@ function finalizar() {
         congratsFinish.innerHTML = `Parabéns! Você é um verdadeiro Fã da Ferrari! #tirouOnda😎`
     }
 
+    congratsFinish.innerHTML += `<a href="../dashboard/dash.html">Acesse suas Métricas</a>`
+
     fetch("/quiz/tentativa", {
         method: "POST",
         headers: {
@@ -193,7 +195,6 @@ function finalizar() {
             quizServer: idQuiz
         }),
     })
-
 }
 
 function carregarQuestao() {

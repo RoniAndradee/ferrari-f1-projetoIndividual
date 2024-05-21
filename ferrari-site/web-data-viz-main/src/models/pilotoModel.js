@@ -18,10 +18,8 @@ function buscarPorNome(nome) {
   return database.executar(instrucaoSql);
 }
 
-// function cadastrar(razaoSocial, cnpj) {
-//   var instrucaoSql = `INSERT INTO emp... (razao_social, cnpj) VALUES ('${razaoSocial}', '${cnpj}')`;
-
-//   return database.executar(instrucaoSql);
-// }
-
-module.exports = { buscarPorId, listar, buscarPorNome };
+module.exports = {
+  buscarPorId,
+  listar,
+  buscarPorNome
+};

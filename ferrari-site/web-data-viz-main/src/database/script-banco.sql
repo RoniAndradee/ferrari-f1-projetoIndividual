@@ -39,8 +39,8 @@ qtdPerguntas int
 
 create table tentativaQuiz (
 idTentativa int,
-fkUsuario int,
 fkQuiz int,
+fkUsuario int,
 qtdAcertos int,
 dtTentativa datetime default current_timestamp,
 primary key (idTentativa, fkQuiz, fkUsuario),
@@ -59,8 +59,13 @@ CREATE TABLE aviso (
 );
 
 select * from tentativaQuiz;
+select * from quiz;
 
-SELECT max(idTentativa) from tentativaQuiz WHERE fkUsuario = 1;
+insert into quiz values
+(
+
+insert into tentativaQuiz (idTentativa,fkQuiz,fkUsuario) values
+(1,2,1);
 
 insert into equipe values
 (default, 'Mercedes-AMG Petronas F1 Team', '1954-07-04', 8),

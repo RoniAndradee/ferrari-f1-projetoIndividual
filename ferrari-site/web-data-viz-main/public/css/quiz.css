@@ -86,6 +86,16 @@ body{
     gap: 10px;
 }
 
+.congratsFinish a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+.congratsFinish a:visited{
+    color: #fff;
+}
+
 button {
     width: 100%;
     text-align: left;
