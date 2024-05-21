@@ -12,42 +12,45 @@
     <script src="../js/sessao.js"></script>
     <script src="../js/alerta.js"></script>
 </head>
+
+<!-- <body> -->
+    
 <body onload="validarSessao()">
     <div class="janela">
         <div class="header-left dash-header">
             <h1>Ferrari F1</h1>
-            
+
             <img src="../assets/images/ferrari-logo.png" class="logo">
-            
+
             <div class="hello">
                 <h3>Olá, <span id="b_usuario"></span>!</h3>
             </div>
-            
+
             <div class="btn-nav">
                 <h3>Quiz</h3>
             </div>
-            
+
             <div class="btn-nav-white">
                 <a href="./dashboard.html">
                     <h3>Gráficos</h3>
                 </a>
             </div>
-            
+
             <div class="btn-nav-white">
                 <a href="./mural.html">
                     <h3>Mural de Avisos</h3>
                 </a>
             </div>
-            
+
             <div class="btn-logout" onclick="limparSessao()">
                 <h3>Sair</h3>
             </div>
         </div>
-        
+
         <div class="quiz">
-            <!-- <h1>Quiz Fórmula 1</h1> -->
             
-            <div class="iniciar">
+            <div id="inicio">
+                <h1>Quiz Sobre a ferrari na Fórmula 1</h1>
                 <button class="btnIniciar" id="btnIniciar">Iniciar</button>
             </div>
             <main class="main" id="main">
@@ -69,4 +72,5 @@
     </div>
     <script src="../js/quiz.js"></script>
 </body>
+
 </html>

@@ -122,6 +122,7 @@ const questions = [
 ];
 
 const main = document.getElementById('main');
+const inicio = document.getElementById('inicio')
 const questao = document.getElementById('questao');
 const respostas = document.getElementById('respostas');
 const spanQtd = document.getElementById('spanQtd');
@@ -133,28 +134,29 @@ const btnReiniciar = document.getElementById('btnReiniciar');
 const btnIniciar = document.getElementById('btnIniciar');
 
 let indiceAtual = 0;
-let questionsCorrect = 0;
-let idUsuario = sessionStorage.ID_USUARIO;
+let questoesCorretas = 0;
 let idQuiz = 1;
+let idUsuario = sessionStorage.ID_USUARIO;
 
 btnReiniciar.onclick = () => {
-    content.style.display = "flex";
+    inicio.style.display = "flex";
     contentFinish.style.display = "none";
+    main.style.display = "none";
 
     indiceAtual = 0;
-    questionsCorrect = 0;
-    carregarQuestao();
+    questoesCorretas = 0;
 };
 
 btnIniciar.onclick = () => {
+    inicio.style.display = "none";
     main.style.display = "flex";
     questao.style.margin = "20px 0";
     carregarQuestao();
-}
+};
 
 function proximaQuestao(e) {
     if (e.target.getAttribute("data-correct") === "true") {
-        questionsCorrect++;
+        questoesCorretas++;
     }
 
     if (indiceAtual < questions.length - 1) {
@@ -166,13 +168,13 @@ function proximaQuestao(e) {
 }
 
 function finalizar() {
-    textoFinal.innerHTML = `você acertou ${questionsCorrect} de ${questions.length}`;
+    textoFinal.innerHTML = `você acertou ${questoesCorretas} de ${questions.length}`;
     content.style.display = "none";
     contentFinish.style.display = "flex";
 
-    if (questionsCorrect <= 5) {
+    if (questoesCorretas <= 5) {
         congratsFinish.innerHTML = `Parabéns! Mas você precisa estudar um pouco mais 😕`
-    } else if (questionsCorrect <= 8) {
+    } else if (questoesCorretas <= 8) {
         congratsFinish.innerHTML = `Parabéns! Você é um bom Fã da Ferrari, mas da pra melhorar! 😉`
     } else {
         congratsFinish.innerHTML = `Parabéns! Você é um verdadeiro Fã da Ferrari! #tirouOnda😎`
@@ -186,15 +188,15 @@ function finalizar() {
         body: JSON.stringify({
             // crie um atributo que recebe o valor recuperado aqui
             // Agora vá para o arquivo routes/usuario.js
-            corretasServer: questionsCorrect,
+            corretasServer: questoesCorretas,
             idServer: idUsuario,
+            quizServer: idQuiz
         }),
     })
 
 }
 
 function carregarQuestao() {
-    btnIniciar.style.display = "none";
     spanQtd.innerHTML = `${indiceAtual + 1} de ${questions.length}`;
     const item = questions[indiceAtual];
     respostas.innerHTML = "";
