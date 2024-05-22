@@ -58,15 +58,6 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
 );
 
-select * from tentativaQuiz;
-select * from quiz;
-
-insert into quiz values
-(
-
-insert into tentativaQuiz (idTentativa,fkQuiz,fkUsuario) values
-(1,2,1);
-
 insert into equipe values
 (default, 'Mercedes-AMG Petronas F1 Team', '1954-07-04', 8),
 (default, 'Oracle Red Bull Racing', '2005-03-26', 6),
@@ -102,3 +93,5 @@ insert into piloto values
 (default, 10, 'Valtteri Bottas', '1989-08-28', NULL);
 
 select * from usuario;
+
+select TRUNCATE(avg(qtdAcertos),2) from tentativaQuiz where fkUsuario = 1;

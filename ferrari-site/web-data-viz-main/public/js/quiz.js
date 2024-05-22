@@ -168,19 +168,19 @@ function proximaQuestao(e) {
 }
 
 function finalizar() {
-    textoFinal.innerHTML = `você acertou ${questoesCorretas} de ${questions.length}`;
+    textoFinal.innerHTML = `Você acertou ${questoesCorretas} de ${questions.length}`;
     content.style.display = "none";
     contentFinish.style.display = "flex";
 
     if (questoesCorretas <= 5) {
-        congratsFinish.innerHTML = `Parabéns! Mas você precisa estudar um pouco mais 😕`
+        congratsFinish.innerHTML = `Parabéns! Mas você precisa estudar um pouco mais 😕`;
     } else if (questoesCorretas <= 8) {
-        congratsFinish.innerHTML = `Parabéns! Você é um bom Fã da Ferrari, mas da pra melhorar! 😉`
+        congratsFinish.innerHTML = `Parabéns! Você é um bom Fã da Ferrari, mas da pra melhorar! 😉`;
     } else {
-        congratsFinish.innerHTML = `Parabéns! Você é um verdadeiro Fã da Ferrari! #tirouOnda😎`
+        congratsFinish.innerHTML = `Parabéns! Você é um verdadeiro Fã da Ferrari! #tirouOnda😎`;
     }
 
-    congratsFinish.innerHTML += `<a href="../dashboard/dash.html">Acesse suas Métricas</a>`
+    goToDash.innerHTML = `<a href="../dashboard/dash.html">Acesse suas Métricas</a>`;
 
     fetch("/quiz/tentativa", {
         method: "POST",

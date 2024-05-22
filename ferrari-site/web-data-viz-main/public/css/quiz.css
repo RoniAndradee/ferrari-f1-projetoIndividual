@@ -84,16 +84,17 @@ body{
     text-align: center;
     flex-direction: column;
     gap: 10px;
-}
-
-.congratsFinish a{
-    text-decoration: none;
-    color: white;
     font-size: 20px;
 }
 
-.congratsFinish a:visited{
-    color: #fff;
+#goToDash a{
+    text-decoration: none;
+    color: #8b32ff;
+}
+
+#goToDash a:hover{
+    color: #FF1200;
+    transition: 0.5s;
 }
 
 button {
