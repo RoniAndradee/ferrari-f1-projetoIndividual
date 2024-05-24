@@ -21,8 +21,8 @@ var avisosRouter = require("./src/routes/avisos");
 var medidasRouter = require("./src/routes/medidas");
 var aquariosRouter = require("./src/routes/aquarios");
 var pilotosRouter = require("./src/routes/pilotos");
-var quizRouter = require("./src/routes/quiz")
-var dashRouter = require("./src/routes/dash")
+var quizRouter = require("./src/routes/quiz");
+var dashRouter = require("./src/routes/dash");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));

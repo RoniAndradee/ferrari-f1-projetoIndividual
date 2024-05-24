@@ -15,4 +15,12 @@ router.post("/pontuacaoMedia", function (req, res) {
     dashController.pontuacaoMedia(req, res);
 })
 
+router.post("/acertosPorTentativa", function (req, res) {
+    dashController.acertosPorTentativa(req, res);
+})
+
+router.post("/topUsuarios", function (req, res) {
+    dashController.topUsuarios(req, res);
+})
+
 module.exports = router;

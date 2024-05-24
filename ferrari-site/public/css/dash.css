@@ -29,5 +29,20 @@
 
 #divMaior span, #divMenor span, #divMedia span{
     font-size: 25px;
-    /* color: #ff1200; */
+}
+
+#graficos{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    padding: 20px;
+}
+
+.graficoPontuacao, .graficoTop{
+    padding: 20px;
+    width: 45%;
+    background-color: rgba(20, 20, 20, 0.8);
+
 }
