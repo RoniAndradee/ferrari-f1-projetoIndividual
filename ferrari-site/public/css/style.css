@@ -139,10 +139,11 @@ body{
 
 .ferrari-about-col-2{
     flex-basis: 35%;
+    text-align: center;
 }
 
 .ferrari-about-col-2 img{
-    width: 80%;
+    width: 60%;
 }
 /* fim do estilo do about scuderia ferrari */
 
@@ -154,10 +155,11 @@ body{
 
 .f1-my-life-col-1{
     flex-basis: 35%;
+    text-align: center;
 }
 
 .f1-my-life-col-1 img{
-    width: 100%;
+    width: 60%;
 }
 
 .f1-my-life-col-2{
