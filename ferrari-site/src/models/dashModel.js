@@ -25,7 +25,13 @@ function acertosPorTentativa(idUsuario) {
 }
 
 function topUsuarios(limiteUsuarios) {
-    var instrucaoSql = `SELECT qtdAcertos AS acertos, nome FROM tentativaQuiz JOIN usuario ON fkUsuario = idUsuario ORDER BY qtdAcertos DESC LIMIT ${limiteUsuarios};`;
+    var instrucaoSql = `SELECT qtdAcertos AS acertos, nome FROM tentativaQuiz JOIN usuario ON fkUsuario = idUsuario ORDER BY qtdAcertos DESC LIMIT ${limiteUsuarios}`;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+function pilotosFavoritos() {
+    var instrucaoSql = `SELECT piloto.nome, COUNT(usuario.fkPilotoFavorito) AS 'qtdVezesEscolhido' FROM usuarioJOIN piloto ON idPiloto = fkPilotoFavorito GROUP BY piloto.nome`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -35,5 +41,6 @@ module.exports = {
     menorPontuacao,
     pontuacaoMedia,
     acertosPorTentativa,
-    topUsuarios
+    topUsuarios,
+    pilotosFavoritos
 };

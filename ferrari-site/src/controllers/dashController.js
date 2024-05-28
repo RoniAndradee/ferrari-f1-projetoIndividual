@@ -40,10 +40,18 @@ function topUsuarios(req, res) {
   });
 }
 
+function pilotosFavoritos(req, res) {
+  
+  dashModel.pilotosFavoritos().then((resultado) => {
+    res.status(200).json(resultado);
+  });
+}
+
 module.exports = {
     maiorPontuacao,
     menorPontuacao,
     pontuacaoMedia,
     acertosPorTentativa,
-    topUsuarios
+    topUsuarios,
+    pilotosFavoritos
 };

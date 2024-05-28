@@ -111,4 +111,5 @@ select distinct(fkUsuario), qtdAcertos, nome from tentativaQuiz join usuario on 
 select * from usuario;
 select * from piloto;
 
-select count(fkPilotoFavorito) from usuario where fkPilotoFavorito = 1;
+select piloto.nome, count(usuario.fkPilotoFavorito) as 'qtdVezesEscolhido' from usuario 
+join piloto on idPiloto = fkPilotoFavorito group by piloto.nome;

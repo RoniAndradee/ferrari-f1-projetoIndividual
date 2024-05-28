@@ -12,8 +12,6 @@
     <script src="../js/sessao.js"></script>
     <script src="./../js/alerta.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!--FONT AWESOME-->
-    <!-- <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -67,14 +65,14 @@
                 </div>
             </div>
             <!-- <section class="dashboard"> -->
-                <div id="graficos">
-                    <div class="graficoPontuacao">
-                        <canvas id="grafico-pontuacao"></canvas>
-                    </div>
-                    <div class="graficoTop">
-                        <canvas id="grafico-top"></canvas>
-                    </div>
+            <div id="graficos">
+                <div class="graficoPontuacao">
+                    <canvas id="grafico-pontuacao"></canvas>
                 </div>
+                <div class="graficoTop">
+                    <canvas id="grafico-top"></canvas>
+                </div>
+            </div>
             <!-- </section> -->
 
         </div>
@@ -91,6 +89,8 @@
     var labelTentativas = [];
     var labelNomes = [];
     var dataAcertoUsuario = [];
+    var labelPilotos = [];
+    var dataVezesEscolhido = [];
 
     function obterMaiorPontuacao() {
         let idUsuario = sessionStorage.ID_USUARIO;
@@ -218,7 +218,7 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
-    
+
     function graficoTopUsuario() {
         fetch(`/dash/topUsuarios`, {
             method: "POST",
@@ -240,6 +240,37 @@
                         }
 
                         plotarGraficoTopUsuarios();
+
+                    });
+                } else {
+                    console.error('Nenhum dado encontrado ou erro na API');
+                }
+            })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function graficoPilotosFavoritos() {
+        // let idUsuario = sessionStorage.ID_USUARIO;
+
+        fetch(`/dash/pilotosFavoritos`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            }
+        })
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (resposta) {
+                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                        for (let i = 0; i < resposta.length; i++) {
+                            dataVezesEscolhido.push(resposta[i].qtdVezesEscolhido);
+                            labelPilotos.push(resposta[i].nome);
+                        }
+
+                        plotarGraficoPilotosFavoritos();
 
                     });
                 } else {
@@ -302,7 +333,7 @@
                 },
                 title: {
                     display: true,
-                    text: 'Sua pontuação nas ultimas tentativas',
+                    text: 'Sua pontuação nas últimas tentativas',
                     font: {
                         size: 20
                     },
@@ -415,4 +446,85 @@
         );
     }
 
+    function plotarGraficoPilotosFavoritos() {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = labelPilotos;
+        let data = dataVezesEscolhido;
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Pontos',
+                data: data,
+                fill: false,
+                borderColor: '#FF1200',
+                tension: 0.1
+            },]
+        };
+
+        let options = {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        color: '#CCC',
+                        font: {
+                            size: 15
+                        }
+                    },
+                    grid: {
+                        color: '#CCC'
+                    }
+                },
+                x: {
+                    ticks: {
+                        color: '#CCC',
+                        font: {
+                            size: 15
+                        }
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#CCC'
+                    }
+                },
+                title: {
+                    display: true,
+                    text: 'Sua pontuação nas últimas tentativas',
+                    font: {
+                        size: 20
+                    },
+                    color: '#FFF',
+                }
+            },
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'line',
+            data: dados,
+            options: options,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        const graficoPontuacao = new Chart(
+            document.getElementById(`grafico-pontuacao`),
+            config
+        );
+    }
 </script>

@@ -23,4 +23,8 @@ router.post("/topUsuarios", function (req, res) {
     dashController.topUsuarios(req, res);
 })
 
+router.post("/pilotosFavoritos", function (req, res) {
+    dashController.pilotosFavoritos(req, res);
+})
+
 module.exports = router;
