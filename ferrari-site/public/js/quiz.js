@@ -1,122 +1,122 @@
-const questions = [
+const questoes = [
     {
-        question: "Qual piloto venceu mais campeonatos de Fórmula 1 pela Ferrari?",
-        answers: [
-            { option: "Michael Schumacher", correct: true },
-            { option: "Sebastian Vettel", correct: false },
-            { option: "Niki Lauda", correct: false },
+        questao: "Qual piloto venceu mais campeonatos de Fórmula 1 pela Ferrari?",
+        respostas: [
+            { opcao: "Michael Schumacher", correta: true },
+            { opcao: "Sebastian Vettel", correta: false },
+            { opcao: "Niki Lauda", correta: false },
         ],
     },
     {
-        question: "Quantos títulos de construtores a Ferrari ganhou na Fórmula 1 até agora?",
-        answers: [
-            { option: "16", correct: false },
-            { option: "15", correct: true },
-            { option: "13", correct: false },
+        questao: "Quantos títulos de construtores a Ferrari ganhou na Fórmula 1 até agora?",
+        respostas: [
+            { opcao: "16", correta: false },
+            { opcao: "15", correta: true },
+            { opcao: "13", correta: false },
         ],
     },
     {
-        question: "Em que ano a Ferrari ganhou seu primeiro campeonato de construtores na Fórmula 1?",
-        answers: [
-            { option: "1950", correct: false },
-            { option: "1961", correct: true },
-            { option: "1975", correct: false },
+        questao: "Em que ano a Ferrari ganhou seu primeiro campeonato de construtores na Fórmula 1?",
+        respostas: [
+            { opcao: "1950", correta: false },
+            { opcao: "1961", correta: true },
+            { opcao: "1975", correta: false },
         ],
     },
     {
-        question: "Qual é o circuito onde a Ferrari conquistou o maior número de vitórias na Fórmula 1?",
-        answers: [
-            { option: "Circuito de Silverstone", correct: false },
-            { option: "Circuito de Monza", correct: true },
-            { option: "Circuito de Spa-Francorchamps", correct: false },
+        questao: "Qual é o circuito onde a Ferrari conquistou o maior número de vitórias na Fórmula 1?",
+        respostas: [
+            { opcao: "Circuito de Silverstone", correta: false },
+            { opcao: "Circuito de Monza", correta: true },
+            { opcao: "Circuito de Spa-Francorchamps", correta: false },
         ],
     },
     {
-        question: "Quantas vezes a Ferrari terminou em segundo lugar no campeonato de construtores?",
-        answers: [
-            { option: "8", correct: false },
-            { option: "9", correct: true },
-            { option: "7", correct: false },
+        questao: "Quantas vezes a Ferrari terminou em segundo lugar no campeonato de construtores?",
+        respostas: [
+            { opcao: "8", correta: false },
+            { opcao: "9", correta: true },
+            { opcao: "7", correta: false },
         ],
     },
     {
-        question: "Quem foi o primeiro piloto a vencer um Grande Prêmio pela Ferrari?",
-        answers: [
-            { option: "Nino Farina", correct: true },
-            { option: "Juan Manuel Fangio", correct: false },
-            { option: "Tazio Nuvolari", correct: false },
+        questao: "Quem foi o primeiro piloto a vencer um Grande Prêmio pela Ferrari?",
+        respostas: [
+            { opcao: "Nino Farina", correta: true },
+            { opcao: "Juan Manuel Fangio", correta: false },
+            { opcao: "Tazio Nuvolari", correta: false },
         ],
     },
     {
-        question: "Qual é o número de chassi do carro da Ferrari que conquistou o primeiro campeonato mundial de pilotos para a equipe?",
-        answers: [
-            { option: "312B", correct: false },
-            { option: "156", correct: true },
-            { option: "246", correct: false },
+        questao: "Qual é o número de chassi do carro da Ferrari que conquistou o primeiro campeonato mundial de pilotos para a equipe?",
+        respostas: [
+            { opcao: "312B", correta: false },
+            { opcao: "156", correta: true },
+            { opcao: "246", correta: false },
         ],
     },
     {
-        question: "Em qual ano a Ferrari estreou na Fórmula 1?",
-        answers: [
-            { option: "1950", correct: true },
-            { option: "1948", correct: false },
-            { option: "1952", correct: false },
+        questao: "Em qual ano a Ferrari estreou na Fórmula 1?",
+        respostas: [
+            { opcao: "1950", correta: true },
+            { opcao: "1948", correta: false },
+            { opcao: "1952", correta: false },
         ],
     },
     {
-        question: "Qual foi o primeiro piloto a ganhar o campeonato de pilotos pela Ferrari após a era de Michael Schumacher?",
-        answers: [
-            { option: "Kimi Räikkönen", correct: true },
-            { option: "Felipe Massa", correct: false },
-            { option: "Fernando Alonso", correct: false },
+        questao: "Qual foi o primeiro piloto a ganhar o campeonato de pilotos pela Ferrari após a era de Michael Schumacher?",
+        respostas: [
+            { opcao: "Kimi Räikkönen", correta: true },
+            { opcao: "Felipe Massa", correta: false },
+            { opcao: "Fernando Alonso", correta: false },
         ],
     },
     {
-        question: "Qual foi o ano mais recente em que a Ferrari conquistou o título de construtores na Fórmula 1?",
-        answers: [
-            { option: "2010", correct: false },
-            { option: "2008", correct: false },
-            { option: "2007", correct: true },
+        questao: "Qual foi o ano mais recente em que a Ferrari conquistou o título de construtores na Fórmula 1?",
+        respostas: [
+            { opcao: "2010", correta: false },
+            { opcao: "2008", correta: false },
+            { opcao: "2007", correta: true },
         ],
     },
     // {
-    //     question: "Quem foi o fundador da Scuderia Ferrari, a equipe de corrida da Ferrari?",
-    //     answers: [
-    //         { option: "Enzo Ferrari", correct: true },
-    //         { option: "Luigi Chinetti", correct: false },
-    //         { option: "Gilles Villeneuve", correct: false },
+    //     questao: "Quem foi o fundador da Scuderia Ferrari, a equipe de corrida da Ferrari?",
+    //     respostas: [
+    //         { opcao: "Enzo Ferrari", correta: true },
+    //         { opcao: "Luigi Chinetti", correta: false },
+    //         { opcao: "Gilles Villeneuve", correta: false },
     //     ],
     // },
     // {
-    //     question: "Qual foi o primeiro Grande Prêmio vencido pela Ferrari na Fórmula 1?",
-    //     answers: [
-    //         { option: "Grande Prêmio da Itália", correct: true },
-    //         { option: "Grande Prêmio de Mônaco", correct: false },
-    //         { option: "Grande Prêmio da Inglaterra", correct: false },
+    //     questao: "Qual foi o primeiro Grande Prêmio vencido pela Ferrari na Fórmula 1?",
+    //     respostas: [
+    //         { opcao: "Grande Prêmio da Itália", correta: true },
+    //         { opcao: "Grande Prêmio de Mônaco", correta: false },
+    //         { opcao: "Grande Prêmio da Inglaterra", correta: false },
     //     ],
     // },
     // {
-    //     question: "Quantas vezes a Ferrari conquistou o título de construtores na década de 2000?",
-    //     answers: [
-    //         { option: "6", correct: true },
-    //         { option: "5", correct: false },
-    //         { option: "7", correct: false },
+    //     questao: "Quantas vezes a Ferrari conquistou o título de construtores na década de 2000?",
+    //     respostas: [
+    //         { opcao: "6", correta: true },
+    //         { opcao: "5", correta: false },
+    //         { opcao: "7", correta: false },
     //     ],
     // },
     // {
-    //     question: "Qual piloto conquistou o último título mundial de pilotos pela Ferrari antes da era de Michael Schumacher?",
-    //     answers: [
-    //         { option: "Niki Lauda", correct: true },
-    //         { option: "Alain Prost", correct: false },
-    //         { option: "Jody Scheckter", correct: false },
+    //     questao: "Qual piloto conquistou o último título mundial de pilotos pela Ferrari antes da era de Michael Schumacher?",
+    //     respostas: [
+    //         { opcao: "Niki Lauda", correta: true },
+    //         { opcao: "Alain Prost", correta: false },
+    //         { opcao: "Jody Scheckter", correta: false },
     //     ],
     // },
     // {
-    //     question: "Quem foi o piloto da Ferrari que venceu o Grande Prêmio de Mônaco por cinco vezes consecutivas?",
-    //     answers: [
-    //         { option: "Michael Schumacher", correct: true },
-    //         { option: "Sebastian Vettel", correct: false },
-    //         { option: "Kimi Räikkönen", correct: false },
+    //     questao: "Quem foi o piloto da Ferrari que venceu o Grande Prêmio de Mônaco por cinco vezes consecutivas?",
+    //     respostas: [
+    //         { opcao: "Michael Schumacher", correta: true },
+    //         { opcao: "Sebastian Vettel", correta: false },
+    //         { opcao: "Kimi Räikkönen", correta: false },
     //     ],
     // },
 ];
@@ -142,7 +142,7 @@ btnReiniciar.onclick = () => {
     inicio.style.display = "flex";
     contentFinish.style.display = "none";
     main.style.display = "none";
-
+    location.reload();
     indiceAtual = 0;
     questoesCorretas = 0;
 };
@@ -151,15 +151,49 @@ btnIniciar.onclick = () => {
     inicio.style.display = "none";
     main.style.display = "flex";
     questao.style.margin = "20px 0";
+    embaralharQuestoes(questoes);
     carregarQuestao();
 };
 
-function proximaQuestao(e) {
-    if (e.target.getAttribute("data-correct") === "true") {
+function embaralharQuestoes(lista) {
+    for (let i = lista.length - 1; i > 0; i--) {
+        const j = (Math.random() * (i + 1)).toFixed(0);
+        [lista[i], lista[j]] = [lista[j], lista[i]];
+    }
+    return lista;
+}
+
+function carregarQuestao() {
+    spanQtd.innerHTML = `${indiceAtual + 1} de ${questoes.length}`;
+    // let indiceAleatorio = (Math.random() * 10).toFixed(0);
+    const item = questoes[indiceAtual];
+    respostas.innerHTML = "";
+    questao.innerHTML = item.questao;
+
+    for (let i = 0; i < item.respostas.length; i++) {
+        const answer = item.respostas[i];
+        const div = document.createElement("div");
+        div.innerHTML = `
+    <button class="opcao" id="opcao" opcao-correta="${answer.correta}">
+    ${answer.opcao}
+    </button>
+    `;
+        respostas.appendChild(div);
+    }
+
+    const botoesRespostas = document.querySelectorAll(".opcao");
+    for (let i = 0; i < botoesRespostas.length; i++) {
+        botoesRespostas[i].addEventListener("click", proximaQuestao);
+    }
+}
+
+
+function proximaQuestao(event) {
+    if (event.target.getAttribute("opcao-correta") === "true") {
         questoesCorretas++;
     }
 
-    if (indiceAtual < questions.length - 1) {
+    if (indiceAtual < questoes.length - 1) {
         indiceAtual++;
         carregarQuestao();
     } else {
@@ -168,7 +202,7 @@ function proximaQuestao(e) {
 }
 
 function finalizar() {
-    textoFinal.innerHTML = `Você acertou ${questoesCorretas} de ${questions.length}`;
+    textoFinal.innerHTML = `Você acertou ${questoesCorretas} de ${questoes.length}`;
     content.style.display = "none";
     contentFinish.style.display = "flex";
 
@@ -180,7 +214,7 @@ function finalizar() {
         congratsFinish.innerHTML = `Parabéns! Você é um verdadeiro Fã da Ferrari! #tirouOnda😎`;
     }
 
-    goToDash.innerHTML = `<a href="../dashboard/dash.html">Acesse suas Métricas</a>`;
+    goToDash.innerHTML = `<a href="../dashboard/dashboard.html">Acesse suas Métricas</a>`;
 
     fetch("/quiz/tentativa", {
         method: "POST",
@@ -197,26 +231,4 @@ function finalizar() {
     })
 }
 
-function carregarQuestao() {
-    spanQtd.innerHTML = `${indiceAtual + 1} de ${questions.length}`;
-    const item = questions[indiceAtual];
-    respostas.innerHTML = "";
-    questao.innerHTML = item.question;
-
-    for (let i = 0; i < item.answers.length; i++) {
-        const answer = item.answers[i];
-        const div = document.createElement("div");
-        div.innerHTML = `
-    <button class="opcao" id="opcao" data-correct="${answer.correct}">
-    ${answer.option}
-    </button>
-    `;
-        respostas.appendChild(div);
-    }
-
-    const answerButtons = document.querySelectorAll(".opcao");
-    for (let i = 0; i < answerButtons.length; i++) {
-        answerButtons[i].addEventListener("click", proximaQuestao);
-    }
-}
 

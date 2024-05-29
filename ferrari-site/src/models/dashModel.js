@@ -19,7 +19,7 @@ function pontuacaoMedia(idUsuario) {
 }
 
 function acertosPorTentativa(idUsuario) {
-    var instrucaoSql = `SELECT idTentativa, qtdAcertos AS acertos FROM tentativaQuiz WHERE fkUsuario = ${idUsuario}`;
+    var instrucaoSql = `SELECT idTentativa, qtdAcertos AS acertos FROM tentativaQuiz WHERE fkUsuario = '${idUsuario}'`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
@@ -31,7 +31,7 @@ function topUsuarios(limiteUsuarios) {
 }
 
 function pilotosFavoritos() {
-    var instrucaoSql = `SELECT piloto.nome, COUNT(usuario.fkPilotoFavorito) AS 'qtdVezesEscolhido' FROM usuarioJOIN piloto ON idPiloto = fkPilotoFavorito GROUP BY piloto.nome`;
+    var instrucaoSql = `SELECT piloto.nome, COUNT(usuario.fkPilotoFavorito) AS 'qtdVezesEscolhido' FROM usuario JOIN piloto ON idPiloto = fkPilotoFavorito GROUP BY piloto.nome`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }

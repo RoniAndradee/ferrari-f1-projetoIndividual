@@ -7,7 +7,7 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.logo{
+.logo {
   width: 50px;
 }
 
@@ -303,7 +303,6 @@ body {
 .btn-white {
   color: #e6005a;
   background-color: #FFF;
-
 }
 
 .label-captura {
@@ -399,25 +398,28 @@ canvas {
 
 .btn-nav-white {
   width: 40%;
-  background-color: #FFF;
-  border: 3px solid #ff1200;
+  background-color: transparent;
+  border: 1px solid #BE4747;
   border-radius: 15px;
   text-align: center;
   padding: 2% 5%;
 }
 
-.btn-nav:hover, .btn-nav-white:hover, .btn-logout:hover{
-  background-color: transparent;
-  border: 1px solid #BE4747;
-  transition: 0.5s;
+.btn-nav:hover,
+.btn-nav-white:hover,
+.btn-logout:hover {
+  background-color: #ff1200;
+  border: 1px solid #FFF;
+  transition: ease-in-out .5s;
 }
 
-.btn-nav-white:hover h3, .btn-logout:hover h3{
+.btn-nav-white:hover h3,
+.btn-logout:hover h3 {
   color: #FFF;
 }
 
 .btn-nav-white h3 {
-  color: #000000;
+  color: #fff;
   padding: 0;
   margin: 0;
 }
@@ -432,8 +434,9 @@ canvas {
   margin: 0;
   padding: 0;
   width: 20%;
-  background-color: #ccc;
-  color: #000;
+  background-color: transparent;
+  border: 1px solid #BE4747;
+  color: #FFF;
   border-radius: 10px;
   text-align: center;
   padding: 10px 15px;
