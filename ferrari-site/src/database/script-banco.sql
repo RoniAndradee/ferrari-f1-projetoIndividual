@@ -15,7 +15,6 @@ primary key (idPiloto, fkEquipe),
 nome varchar(45),
 dtNasc date,
 fkInspiracao int,
-qtdVezesEscolhido int,
 foreign key (fkInspiracao)
 	references piloto(idPiloto),
 foreign key (fkEquipe)
@@ -51,20 +50,6 @@ foreign key (fkQuiz)
 	references quiz (idQuiz)
 );
 
-insert into tentativaQuiz (idTentativa, fkQuiz, fkUsuario, qtdAcertos) values
-(32, 1, 3, 10);
-select * from tentativaQuiz;
-
-select qtdAcertos, nome from tentativaQuiz join usuario on fkUsuario = idUsuario order by qtdAcertos desc limit 5;
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(idUsuario)
-);
-
 insert into equipe values
 (default, 'Mercedes-AMG Petronas F1 Team', '1954-07-04', 8),
 (default, 'Oracle Red Bull Racing', '2005-03-26', 6),
@@ -98,18 +83,3 @@ insert into piloto values
 (default, 9, 'Daniel Ricciardo', '1989-01-07', NULL),
 (default, 10, 'Guanyu Zhou', '1999-05-30', NULL),
 (default, 10, 'Valtteri Bottas', '1989-08-28', NULL);
-
-update piloto set qtdVezesEscolhido = 5 where idPiloto = 1;
-
-select nome, qtdVezesEscolhido from piloto order by qtdVezesEscolhido desc limit 3;
-
-select nome, qtdAcertos from tentativaQuiz join usuario on fkUsuario = idUsuario order by qtdAcertos desc limit 5;
-SELECT idTentativa, qtdAcertos AS acertos FROM tentativaQuiz WHERE fkUsuario = 1;
-
-select distinct(fkUsuario), qtdAcertos, nome from tentativaQuiz join usuario on fkUsuario = idUsuario order by qtdAcertos desc limit 5;
-
-select * from usuario;
-select * from piloto;
-
-select piloto.nome, count(usuario.fkPilotoFavorito) as 'qtdVezesEscolhido' from usuario 
-join piloto on idPiloto = fkPilotoFavorito group by piloto.nome;

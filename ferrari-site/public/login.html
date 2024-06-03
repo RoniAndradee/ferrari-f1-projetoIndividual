@@ -38,16 +38,16 @@
                         <input id="email_input" type="text" placeholder='' required>
                         <label id='emailLabel' for='email_input'>Email</label>
                     </div>
-                        <div class='label-float'>
-                            <input id="senha_input" type="password" placeholder='' required>
-                            <label id='senhaLabel' for='senha_input'>Senha</label>
-                        </div>
+                    <div class='label-float'>
+                        <input id="senha_input" type="password" placeholder='' required>
+                        <label id='senhaLabel' for='senha_input'>Senha</label>
+                    </div>
                     <button class="botao" onclick="entrar()">Entrar</button>
                     <span>Ainda não tem uma conta? <a href="./cadastro.html">Cadastrar</a></span>
                 </div>
 
                 <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/loading-ferrari.gif" id="loading-gif">
+                    <img src="./assets/images/loading-ferrari.gif" id="loading-gif">
                 </div>
 
                 <div id="div_erros_login"></div>
@@ -58,7 +58,8 @@
     <!-- Inicio do footer -->
     <footer id="footer">
         <span class="footer-text">&copy; Desenvolvido com &hearts; por Ronielli Andrade</span>
-        <a href="https://github.com/roniandradee" target="_blank" class="github-logo"><img src="./assets/images/github-logo.png"></a>
+        <a href="https://github.com/roniandradee" target="_blank" class="github-logo"><img
+                src="./assets/images/github-logo.png"></a>
     </footer>
     <!-- Fim do footer -->
 
@@ -106,18 +107,14 @@
                     sessionStorage.ID_USUARIO = json.idUsuario;
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
-
+                    sessionStorage.FK_PILOTO_FAVORITO = json.pilotoFavorito;
                     setTimeout(function () {
                         window.location = "./dashboard/quiz.html";
                     }, 1000); // apenas para exibir o loading
-
                 });
-
             } else {
-
                 console.log("Houve um erro ao tentar realizar o login!");
-
+                
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);
