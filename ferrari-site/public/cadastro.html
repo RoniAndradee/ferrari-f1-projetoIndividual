@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/sessao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="./css/forms.css" />
     <link rel="icon" href="./assets/images/cavallino.png" />
     <title>Ferrari | Cadastro</title>
 </head>
+
 <body onload="listar()">
     <!--header inicio-->
     <header id="header">
@@ -34,9 +38,9 @@
                 <h1>Cadastro</h1>
                 <div class="formulario">
                     <!-- <label id='userLabel' for='nome_input'>Equipe Favorita</label> -->
-                        <select name="pilotos" id="listaPilotos" required>
-                            <option selected>Selecione seu piloto favorito</option>
-                        </select>
+                    <select name="pilotos" id="listaPilotos" required>
+                        <option selected>Selecione seu piloto favorito</option>
+                    </select>
                     <div class='label-float'>
                         <input id="nome_input" type="text" placeholder='' required>
                         <label id='userLabel' for='nome_input'>Nome</label>
@@ -47,16 +51,16 @@
                         <label id='emailLabel' for='email_input'>Email</label>
                         <span id="erroEmail" style="color: #FF1800;"></span>
                     </div>
-                        <div class='label-float'>
-                            <input id="senha_input" type="password" placeholder='' required>
-                            <label id='senhaLabel' for='senha_input'>Senha</label>
-                            <span id="erroSenha" style="color: #FF1800;"></span>
-                        </div>
-                        <div class='label-float'>
-                            <input id="confirmacao_senha_input" type="password" placeholder='' required>
-                            <label id='confirmSenhaLabel' for='confirmacao_senha_input'>Confirmar Senha</label>
-                            <span id="erroConfirmSenha" style="color: #FF1800;"></span>
-                        </div>
+                    <div class='label-float'>
+                        <input id="senha_input" type="password" placeholder='' required>
+                        <label id='senhaLabel' for='senha_input'>Senha</label>
+                        <span id="erroSenha" style="color: #FF1800;"></span>
+                    </div>
+                    <div class='label-float'>
+                        <input id="confirmacao_senha_input" type="password" placeholder='' required>
+                        <label id='confirmSenhaLabel' for='confirmacao_senha_input'>Confirmar Senha</label>
+                        <span id="erroConfirmSenha" style="color: #FF1800;"></span>
+                    </div>
                     <button class="botao" onclick="cadastrar()">Cadastrar</button>
                     <span>Já tem uma conta? <a href="./login.html">Logar</a></span>
                 </div>
@@ -73,10 +77,12 @@
     <!-- Inicio do footer -->
     <footer id="footer">
         <span class="footer-text">&copy; Desenvolvido com &hearts; por Ronielli Andrade</span>
-        <a href="https://github.com/roniandradee" target="_blank" class="github-logo"><img src="./assets/images/github-logo.png"></a>
+        <a href="https://github.com/roniandradee" target="_blank" class="github-logo"><img
+                src="./assets/images/github-logo.png"></a>
     </footer>
     <!-- Fim do footer -->
 </body>
+
 </html>
 
 <script>
@@ -92,15 +98,23 @@
         var pilotoVar = listaPilotos.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || pilotoVar == "Selecione seu piloto favorito") {
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML = "Preencha todos os campos!";
+            // cardErro.style.display = "block";
+            // mensagem_erro.innerHTML = "Preencha todos os campos!";
             finalizarAguardar();
+            Swal.fire({
+                title: "Não foi possível realizar o cadastro!",
+                text: "Preencha todos os campos",
+                icon: "error",
+                color: "#FFF",
+                confirmButtonColor: '#BE4747',
+                background: "rgb(32, 32, 32)"
+            });
             return false;
         } else {
             setInterval(sumirMensagem, 5000);
         }
 
-        if (emailVar.indexOf('@') == -1 ){
+        if (emailVar.indexOf('@') == -1) {
             erroEmail.innerHTML = `Email inválido`;
             finalizarAguardar();
             return false;
@@ -108,19 +122,19 @@
             erroEmail.innerHTML = ``;
         }
 
-        if (senhaVar.length < 6){
+        if (senhaVar.length < 6) {
             erroSenha.innerHTML = `A senha precisa conter no minímo 6 caracteres`;
             finalizarAguardar();
             return false;
-        }else {
+        } else {
             erroSenha.innerHTML = ``;
         }
 
-        if (confirmacaoSenhaVar != senhaVar){
+        if (confirmacaoSenhaVar != senhaVar) {
             erroConfirmSenha.innerHTML = `As senhas não coincidem`;
             finalizarAguardar();
             return false;
-        }else {
+        } else {
             erroConfirmSenha.innerHTML = ``;
         }
 
@@ -143,14 +157,22 @@
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    cardErro.style.display = "block";
+                    // cardErro.style.display = "block";
+                    // mensagem_erro.innerHTML =
+                    //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                    Swal.fire({
+                        title: "Cadastro realizado com sucesso!",
+                        text: "Redirecionando para tela de login",
+                        icon: "success",
+                        color: "#FFF",
+                        confirmButtonColor: '#BE4747',
+                        background: "rgb(32, 32, 32)"
+                    });
 
-                    mensagem_erro.innerHTML =
-                        "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                     setTimeout(() => {
                         window.location = "login.html";
-                    }, "2000");
+                    }, "3000");
 
                     limparFormulario();
                     finalizarAguardar();

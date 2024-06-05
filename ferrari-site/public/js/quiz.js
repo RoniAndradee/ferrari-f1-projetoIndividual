@@ -16,11 +16,11 @@ const questoes = [
         ],
     },
     {
-        questao: "Em que ano a Ferrari ganhou seu primeiro campeonato de construtores na Fórmula 1?",
+        questao: "Qual piloto conquistou o último título mundial de pilotos pela Ferrari antes da era de Michael Schumacher?",
         respostas: [
-            { opcao: "1950", correta: false },
-            { opcao: "1961", correta: true },
-            { opcao: "1975", correta: false },
+            { opcao: "Niki Lauda", correta: true },
+            { opcao: "Alain Prost", correta: false },
+            { opcao: "Jody Scheckter", correta: false },
         ],
     },
     {
@@ -32,11 +32,11 @@ const questoes = [
         ],
     },
     {
-        questao: "Quantas vezes a Ferrari terminou em segundo lugar no campeonato de construtores?",
+        questao: "Quem foi o fundador da Scuderia Ferrari, a equipe de corrida da Ferrari?",
         respostas: [
-            { opcao: "8", correta: false },
-            { opcao: "9", correta: true },
-            { opcao: "7", correta: false },
+            { opcao: "Enzo Ferrari", correta: true },
+            { opcao: "Luigi Chinetti", correta: false },
+            { opcao: "Gilles Villeneuve", correta: false },
         ],
     },
     {
@@ -48,11 +48,11 @@ const questoes = [
         ],
     },
     {
-        questao: "Qual é o número de chassi do carro da Ferrari que conquistou o primeiro campeonato mundial de pilotos para a equipe?",
+        questao: "Quem foi o piloto da Ferrari que venceu o Grande Prêmio de Mônaco por cinco vezes consecutivas?",
         respostas: [
-            { opcao: "312B", correta: false },
-            { opcao: "156", correta: true },
-            { opcao: "246", correta: false },
+            { opcao: "Michael Schumacher", correta: true },
+            { opcao: "Sebastian Vettel", correta: false },
+            { opcao: "Kimi Räikkönen", correta: false },
         ],
     },
     {
@@ -78,47 +78,7 @@ const questoes = [
             { opcao: "2008", correta: false },
             { opcao: "2007", correta: true },
         ],
-    },
-    // {
-    //     questao: "Quem foi o fundador da Scuderia Ferrari, a equipe de corrida da Ferrari?",
-    //     respostas: [
-    //         { opcao: "Enzo Ferrari", correta: true },
-    //         { opcao: "Luigi Chinetti", correta: false },
-    //         { opcao: "Gilles Villeneuve", correta: false },
-    //     ],
-    // },
-    // {
-    //     questao: "Qual foi o primeiro Grande Prêmio vencido pela Ferrari na Fórmula 1?",
-    //     respostas: [
-    //         { opcao: "Grande Prêmio da Itália", correta: true },
-    //         { opcao: "Grande Prêmio de Mônaco", correta: false },
-    //         { opcao: "Grande Prêmio da Inglaterra", correta: false },
-    //     ],
-    // },
-    // {
-    //     questao: "Quantas vezes a Ferrari conquistou o título de construtores na década de 2000?",
-    //     respostas: [
-    //         { opcao: "6", correta: true },
-    //         { opcao: "5", correta: false },
-    //         { opcao: "7", correta: false },
-    //     ],
-    // },
-    // {
-    //     questao: "Qual piloto conquistou o último título mundial de pilotos pela Ferrari antes da era de Michael Schumacher?",
-    //     respostas: [
-    //         { opcao: "Niki Lauda", correta: true },
-    //         { opcao: "Alain Prost", correta: false },
-    //         { opcao: "Jody Scheckter", correta: false },
-    //     ],
-    // },
-    // {
-    //     questao: "Quem foi o piloto da Ferrari que venceu o Grande Prêmio de Mônaco por cinco vezes consecutivas?",
-    //     respostas: [
-    //         { opcao: "Michael Schumacher", correta: true },
-    //         { opcao: "Sebastian Vettel", correta: false },
-    //         { opcao: "Kimi Räikkönen", correta: false },
-    //     ],
-    // },
+    }
 ];
 
 const main = document.getElementById('main');
@@ -165,7 +125,6 @@ function embaralharQuestoes(lista) {
 
 function carregarQuestao() {
     spanQtd.innerHTML = `${indiceAtual + 1} de ${questoes.length}`;
-    // let indiceAleatorio = (Math.random() * 10).toFixed(0);
     const item = questoes[indiceAtual];
     respostas.innerHTML = "";
     questao.innerHTML = item.questao;
@@ -214,8 +173,7 @@ function finalizar() {
         congratsFinish.innerHTML = `Parabéns! Você é um verdadeiro Fã da Ferrari! #tirouOnda😎`;
     }
 
-    goToDash.innerHTML = `<a href="../dashboard/dashboard.html">Acesse suas Métricas</a>`;
-
+    goToDash.innerHTML = `<a href="../dashboard/dashboard.html">Acesse sua Dashboard</a>`;
     fetch("/quiz/tentativa", {
         method: "POST",
         headers: {

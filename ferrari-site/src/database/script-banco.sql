@@ -50,6 +50,9 @@ foreign key (fkQuiz)
 	references quiz (idQuiz)
 );
 
+insert into quiz values
+(default, 'Quiz sobre a Scuderia Ferrari', 10);
+
 insert into equipe values
 (default, 'Mercedes-AMG Petronas F1 Team', '1954-07-04', 8),
 (default, 'Oracle Red Bull Racing', '2005-03-26', 6),
@@ -62,24 +65,11 @@ insert into equipe values
 (default, 'Visa Cash App RB Formula One Team', '2006-03-12', 0),
 (default, 'Stake F1 Team Kick Sauber', '1993-03-14', 0);
 
-insert into piloto values 
-(default, 1, 'Lewis Hamilton', '1985-01-07', NULL),
-(default, 1, 'George Russell', '1998-02-15', NULL),
-(default, 2, 'Max Verstappen', '1997-09-30', NULL),
-(default, 2, 'Sergio Perez', '1990-01-26', NULL),
+insert into piloto values
+(default, 3, 'Michael Schumacher', '1969-01-03', NULL),
+(default, 3, 'Niki Lauda', '1949-02-22', NULL),
+(default, 3, 'Fernando Alonso', '1981-07-29', NULL),
+(default, 3, 'Kimi Räikkönen', '1979-10-17', NULL),
+(default, 3, 'Sebastian Vettel', '1987-07-03', NULL),
 (default, 3, 'Charles Leclerc', '1997-10-16', NULL),
-(default, 3, 'Carlos Sainz', '1994-09-01', NULL),
-(default, 4, 'Lando Norris', '1999-11-13', NULL),
-(default, 4, 'Oscar Piastri', '2001-04-06', NULL),
-(default, 5, 'Esteban Ocon', '1996-09-17', NULL),
-(default, 5, 'Pierre Gasly', '1996-02-07', NULL),
-(default, 6, 'Alexander Albon', '1996-03-23', NULL),
-(default, 6, 'Logan Sargeant', '2000-12-31', NULL),
-(default, 7, 'Lance Stroll', '1998-10-29', NULL),
-(default, 7, 'Fernando Alonso', '1981-07-29', NULL),
-(default, 8, 'Kevin Magnussen', '1992-10-05', NULL),
-(default, 8, 'Nico Hülkenberg', '1987-08-19', NULL),
-(default, 9, 'Yuki Tsunoda', '2000-05-11', NULL),
-(default, 9, 'Daniel Ricciardo', '1989-01-07', NULL),
-(default, 10, 'Guanyu Zhou', '1999-05-30', NULL),
-(default, 10, 'Valtteri Bottas', '1989-08-28', NULL);
+(default, 3, 'Carlos Sainz', '1994-09-01', NULL);

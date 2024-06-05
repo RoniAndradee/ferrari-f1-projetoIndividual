@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/sessao.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" href="./css/forms.css">
     <link rel="icon" href="./assets/images/cavallino.png" />
     <title>Ferrari | Login</title>
@@ -77,9 +79,17 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "Preencha todos os campos";
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "Preencha todos os campos";
             finalizarAguardar();
+            Swal.fire({
+                title: "Não foi possível realizar o login!",
+                text: "Preencha todos os campos",
+                icon: "error",
+                color: "#FFF",
+                confirmButtonColor: '#BE4747',
+                background: "rgb(32, 32, 32)"
+            });
             return false;
         }
         else {
@@ -110,11 +120,19 @@
                     sessionStorage.FK_PILOTO_FAVORITO = json.pilotoFavorito;
                     setTimeout(function () {
                         window.location = "./dashboard/quiz.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 2000); // apenas para exibir o loading
                 });
             } else {
+                Swal.fire({
+                title: "Não foi possível realizar o login!",
+                text: "Email e/ou senha inválido(s)",
+                icon: "warning",
+                color: "#FFF",
+                confirmButtonColor: '#BE4747',
+                background: "rgb(32, 32, 32)"
+            });
                 console.log("Houve um erro ao tentar realizar o login!");
-                
+
                 resposta.text().then(texto => {
                     console.error(texto);
                     finalizarAguardar(texto);
