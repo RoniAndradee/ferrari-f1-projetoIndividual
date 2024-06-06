@@ -11,13 +11,19 @@ Um projeto feito no 1º Semestre de ADS na SPTech School, o projeto aborda a fer
 • Ao realizar o login o usuário tem acesso a uma página onde pode realizar um quiz sobre a Ferrari.
 
 • Após realizar o quiz o usuário pode acessar uma dashboard onde pode visualizar KPI's com as seguintes informações:
+    <br>
     °**Maior Pontuação no Quiz**;
+    <br>
     °**Menor Pontuação no Quiz**;
+    <br>
     °**Média de Pontuação no Quiz**;
 
 • Além das KPI's o usuário pode visualizar 3 gráficos sendo eles:
+    <br>
     1. **Um gráfico de linhas com histórico de pontuação no Quiz nas últimas tentativas;**
+    <br>
     2. **Um gráfico de barras com o top de 5 usuários com mais pontos no Quiz;**
+    <br>
     3. **Um gráfica de pizza com os pilotos mais escolhidos na hora do cadastro;**
 
 <hr>
