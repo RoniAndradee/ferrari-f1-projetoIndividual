@@ -199,8 +199,8 @@
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                         for (let i = 0; i < resposta.length; i++) {
-                            dataAcertos.push(resposta[i].acertos);
-                            labelTentativas.push(resposta[i].idTentativa);
+                            dataAcertos.push(resposta[i].qtdAcertos);
+                            labelTentativas.push(resposta[i].idTentativa + 'º');
                         }
 
                         plotarGraficoAcertosPorTentativa();
@@ -231,7 +231,7 @@
                         console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
                         for (let i = 0; i < resposta.length; i++) {
-                            dataAcertoUsuario.push(resposta[i].acertos);
+                            dataAcertoUsuario.push(resposta[i].qtdAcertos);
                             labelNomes.push(resposta[i].nome);
                         }
 
@@ -457,26 +457,14 @@
                 data: data,
                 fill: false,
                 backgroundColor: [
-                    '#FF000080',
-                    '#FF333380',
-                    '#FF666680',
-                    '#FF999980',
-                    '#FFCCCC80',
-                    '#CC000080',
-                    '#CC333380',
-                    '#CC666680',
-                    '#CC999980',
-                    '#CC000080',
-                    '#99000080',
-                    '#99333380',
-                    '#99666680',
-                    '#99999980',
-                    '#66000080',
-                    '#66333380',
-                    '#66666680',
-                    '#66000080',
-                    '#33000080',
-                    '#33333380',
+                    '#FF0000',
+                    '#4D0000',
+                    '#800000',
+                    '#FA3447',
+                    '#A52A2A',
+                    '#FA8072',
+                    '#990000',
+                    '#C44D4D',
                 ],
                 hoverOffset: 4,
                 borderColor: '#CCC',

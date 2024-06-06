@@ -19,13 +19,13 @@ function pontuacaoMedia(idUsuario) {
 }
 
 function acertosPorTentativa(idUsuario) {
-    var instrucaoSql = `SELECT idTentativa, qtdAcertos AS acertos FROM tentativaQuiz WHERE fkUsuario = '${idUsuario}'`;
+    var instrucaoSql = `SELECT idTentativa, qtdAcertos AS qtdAcertos FROM tentativaQuiz WHERE fkUsuario = '${idUsuario}'`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
 function topUsuarios(limiteUsuarios) {
-    var instrucaoSql = `SELECT qtdAcertos AS acertos, nome FROM tentativaQuiz JOIN usuario ON fkUsuario = idUsuario ORDER BY qtdAcertos DESC LIMIT ${limiteUsuarios}`;
+    var instrucaoSql = `SELECT nome, MAX(qtdAcertos) AS qtdAcertos FROM tentativaQuiz JOIN usuario ON fkUsuario = idUsuario GROUP BY nome ORDER BY qtdAcertos DESC LIMIT ${limiteUsuarios};`;
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }

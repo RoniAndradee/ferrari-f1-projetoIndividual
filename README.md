@@ -12,19 +12,19 @@ Um projeto feito no 1º Semestre de ADS na SPTech School, o projeto aborda a fer
 
 • Após realizar o quiz o usuário pode acessar uma dashboard onde pode visualizar KPI's com as seguintes informações:
     <br>
-    °**Maior Pontuação no Quiz**;
+    ° **Maior Pontuação no Quiz**
     <br>
-    °**Menor Pontuação no Quiz**;
+    ° **Menor Pontuação no Quiz**
     <br>
-    °**Média de Pontuação no Quiz**;
+    ° **Média de Pontuação no Quiz**
 
 • Além das KPI's o usuário pode visualizar 3 gráficos sendo eles:
     <br>
-    1. **Um gráfico de linhas com histórico de pontuação no Quiz nas últimas tentativas;**
+    1. **Um gráfico de linhas com histórico de pontuação no Quiz nas últimas tentativas**
     <br>
-    2. **Um gráfico de barras com o top de 5 usuários com mais pontos no Quiz;**
+    2. **Um gráfico de barras com o top de 5 usuários com mais pontos no Quiz**
     <br>
-    3. **Um gráfica de pizza com os pilotos mais escolhidos na hora do cadastro;**
+    3. **Um gráfico de pizza com os pilotos mais escolhidos na hora do cadastro**
 
 <hr>
 
@@ -59,3 +59,10 @@ _O comando acima irá iniciar seu projeto e efetuar os comandos de acordo com a 
 6. Para "ver" seu projeto funcionando, acesse em seu navegador o caminho **informado no terminal**.
 
 7. Caso queira parar a execução, tecle **CTRL+C** no terminal em que o projeto está rodando.
+
+<hr>
+
+## Demonstração da dashboard
+
+<img src="https://i.imgur.com/kyLcVgl.png">
+<img src="https://i.imgur.com/WCvOy69.png">
