@@ -98,6 +98,14 @@ let questoesCorretas = 0;
 let idQuiz = 1;
 let idUsuario = sessionStorage.ID_USUARIO;
 
+btnIniciar.onclick = () => {
+    inicio.style.display = "none";
+    main.style.display = "flex";
+    questao.style.margin = "20px 0";
+    embaralharQuestoes(questoes);
+    carregarQuestao();
+};
+
 btnReiniciar.onclick = () => {
     inicio.style.display = "flex";
     contentFinish.style.display = "none";
@@ -105,14 +113,6 @@ btnReiniciar.onclick = () => {
     location.reload();
     indiceAtual = 0;
     questoesCorretas = 0;
-};
-
-btnIniciar.onclick = () => {
-    inicio.style.display = "none";
-    main.style.display = "flex";
-    questao.style.margin = "20px 0";
-    embaralharQuestoes(questoes);
-    carregarQuestao();
 };
 
 function embaralharQuestoes(lista) {
@@ -180,8 +180,6 @@ function finalizar() {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            // crie um atributo que recebe o valor recuperado aqui
-            // Agora vá para o arquivo routes/usuario.js
             corretasServer: questoesCorretas,
             idServer: idUsuario,
             quizServer: idQuiz

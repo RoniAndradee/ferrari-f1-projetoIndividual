@@ -72,4 +72,5 @@ insert into piloto values
 (default, 3, 'Kimi Räikkönen', '1979-10-17', NULL),
 (default, 3, 'Sebastian Vettel', '1987-07-03', NULL),
 (default, 3, 'Charles Leclerc', '1997-10-16', NULL),
-(default, 3, 'Carlos Sainz', '1994-09-01', NULL);
+(default, 3, 'Carlos Sainz', '1994-09-01', NULL),
+(default, 3, 'Outro...', NULL, NULL);
