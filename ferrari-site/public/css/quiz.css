@@ -110,7 +110,7 @@ button {
     width: 30%;
 }
 
-.answer:hover, .btnIniciar:hover, .btnRestart:hover {
+.opcao:hover, .btnIniciar:hover, .btnRestart:hover {
     transition: 0.5s;
     transform: translateY(-3px);
     background-color: transparent;
